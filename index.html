@@ -70,7 +70,6 @@
             transform: translate(-50%, -50%);
         }
 
-        /* Уникальные позиции для видео в каждом блоке */
         .text-video-row:nth-child(1) .video-bg video {
             object-position: 0% 0%;
         }
@@ -152,7 +151,6 @@
     <script>
         const videos = document.querySelectorAll('.video-bg video');
 
-        // Синхронизация времени при загрузке видео
         videos.forEach(video => {
             video.addEventListener('loadeddata', () => {
                 const masterTime = videos[0].currentTime;
@@ -160,7 +158,6 @@
             });
         });
 
-        // Функция для регулярной синхронизации
         const syncVideos = () => {
             const masterTime = videos[0].currentTime;
             videos.forEach(video => {
@@ -170,7 +167,7 @@
             });
         };
 
-        setInterval(syncVideos, 50); // Синхронизация каждые 50 мс
+        setInterval(syncVideos, 50); 
     </script>
 </body>
 </html>
